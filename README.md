@@ -1,1 +1,3 @@
 # rock-paper-scissors
+
+Hey everyone! This is my first JS project of the Odin Project curriculum and in this project, I will be creating a console-only game of Rock Paper Scissors! It should reflect many, if not, all the skills I have learned up until this point about JS like variables, conditionals, and functions for example, as well as some non-technical skills like problem solving and debugging errors that were taught in a few of the lessons. With that being said, I hope you all like this project and thank you for viewing this repo!
