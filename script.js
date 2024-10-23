@@ -33,3 +33,11 @@
 //    this point 5 times. Use a loop for this, or call the
 //    functions in a particular order and using variables 
 //    to keep track of the values for certain rounds(?)
+
+
+function getComputerChoice() {
+    let computerChoice = Math.floor(3*Math.random())
+    return (computerChoice == 0 ? "rock" 
+    : computerChoice == 1 ? "paper" : "scissors");
+}
+
