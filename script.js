@@ -12,3 +12,24 @@
 // console telling you whether you won or lost the
 // game.
 
+// Odin's pseudocode
+// 1. Write a function that returns the computer's
+//    choice for a given round. This value is
+//    calculated based on the built-in random function
+// 2. Write a function that returns the user's choice
+//    for a given round. This function, when called,
+//    simply gets input from the user and returns it.
+// 3. Initialize two variables with the value 0 to keep
+//    track of the players' scores.
+// 4. Write a function that plays out the round. The
+//    function should take the user's choice and the 
+//    computer's choice and return nothing, but will
+//    compare the choices with each other, declaring 
+//    the winner by displaying an appropriate message,
+//    and incrementing the appropriate score count
+// 5. Write a function that plays out the game. The 
+//    game will play out 5 rounds and essentially, you
+//    are calling all the functions the same way up until
+//    this point 5 times. Use a loop for this, or call the
+//    functions in a particular order and using variables 
+//    to keep track of the values for certain rounds(?)
