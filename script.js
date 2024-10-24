@@ -57,3 +57,55 @@ function getUserChoice() {
 
 let userScore = 0;
 let computerScore = 0;
+
+function playRound(userChoice, computerChoice) {
+    console.log("user choice: ", userChoice);
+    console.log("computer choice: ", computerChoice)
+    switch (userChoice) {
+        case "rock":
+            if (computerChoice == "rock") {
+                console.log("It was a tie.");
+            }
+            else if (computerChoice == "paper") {
+                console.log("Computer wins.");
+                computerScore++;
+            }
+            else {
+                console.log("User wins.");
+                userScore++;
+            }
+            break;
+
+        case "paper": 
+            if (computerChoice == "rock") {
+                console.log("User wins.");
+                userScore++;
+            }
+            else if (computerChoice == "paper") {
+                console.log("It was a tie.");
+            }
+            else {
+                console.log("Computer wins.");
+                computerScore++;
+            }
+            break;
+        
+        case "scissors": 
+            if (computerChoice == "rock") {
+                console.log("Computer wins.");
+                computerScore++;
+            }
+            else if (computerChoice == "paper") {
+                console.log("User wins.");
+                userScore++;
+            }
+            else {
+                console.log("It was a tie.");
+            }
+            break;
+
+    }
+         
+}
+
+playRound(getUserChoice(), getComputerChoice())
