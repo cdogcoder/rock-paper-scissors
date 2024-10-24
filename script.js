@@ -108,4 +108,13 @@ function playRound(userChoice, computerChoice) {
          
 }
 
-playRound(getUserChoice(), getComputerChoice())
+function playGame() {
+    let userChoice;
+    let computerChoice;
+    for (let i = 0; i < 5; i++) {
+        userChoice = getUserChoice();
+        computerChoice = getComputerChoice();
+        playRound(userChoice, computerChoice);
+    }
+    console.log(userScore > computerScore ? "USER IS THE WINNER." : "COMPUTER IS THE WINNER.")
+}
