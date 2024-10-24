@@ -55,4 +55,5 @@ function getUserChoice() {
     return userChoice;
 }
 
-getUserChoice()
+let userScore = 0;
+let computerScore = 0;
