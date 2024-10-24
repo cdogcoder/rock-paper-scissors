@@ -59,8 +59,8 @@ let userScore = 0;
 let computerScore = 0;
 
 function playRound(userChoice, computerChoice) {
-    console.log("user choice: ", userChoice);
-    console.log("computer choice: ", computerChoice)
+    console.log("User choice: ", userChoice);
+    console.log("Computer choice: ", computerChoice)
     switch (userChoice) {
         case "rock":
             if (computerChoice == "rock") {
@@ -103,7 +103,6 @@ function playRound(userChoice, computerChoice) {
                 console.log("It was a tie.");
             }
             break;
-
     }
          
 }
@@ -111,10 +110,17 @@ function playRound(userChoice, computerChoice) {
 function playGame() {
     let userChoice;
     let computerChoice;
-    for (let i = 0; i < 5; i++) {
-        userChoice = getUserChoice();
-        computerChoice = getComputerChoice();
-        playRound(userChoice, computerChoice);
+    console.log("Welcome to this Awesome Rock Paper Scissors Game!");
+    console.log("");
+    let wishToProceed = prompt("Do you want to start the game? (Type 'yes' or 'no'): ")
+    if (wishToProceed == 'yes') {
+        console.clear()
+        for (let i = 0; i < 5; i++) {
+            userChoice = getUserChoice();
+            computerChoice = getComputerChoice();
+            playRound(userChoice, computerChoice);
+            console.log("--------------------");
+        }
     }
     console.log(userScore > computerScore ? "USER IS THE WINNER." : "COMPUTER IS THE WINNER.")
 }
