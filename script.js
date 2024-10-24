@@ -41,3 +41,18 @@ function getComputerChoice() {
     : computerChoice == 1 ? "paper" : "scissors");
 }
 
+function getUserChoice() {
+    let userChoice;
+    while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
+        userChoice = prompt("Pick one: Rock, Paper, or Scissors? (all lowercase please): ");
+        if (userChoice == "" || userChoice == null) {
+            continue;
+        }
+        else {
+            userChoice = userChoice.toLowerCase();
+        }
+    }
+    return userChoice;
+}
+
+getUserChoice()
