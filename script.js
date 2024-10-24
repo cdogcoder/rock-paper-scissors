@@ -104,6 +104,9 @@ function playRound(userChoice, computerChoice) {
             }
             break;
     }
+    console.log("");
+    console.log("User score: ", userScore);
+    console.log("Computer score: ", computerScore);
          
 }
 
@@ -124,3 +127,5 @@ function playGame() {
     }
     console.log(userScore > computerScore ? "USER IS THE WINNER." : "COMPUTER IS THE WINNER.")
 }
+
+playGame()
