@@ -114,18 +114,24 @@ function playGame() {
     let userChoice;
     let computerChoice;
     console.log("Welcome to this Awesome Rock Paper Scissors Game!");
-    console.log("");
-    let wishToProceed = prompt("Do you want to start the game? (Type 'yes' or 'no'): ")
-    if (wishToProceed == 'yes') {
-        console.clear()
-        for (let i = 0; i < 5; i++) {
-            userChoice = getUserChoice();
-            computerChoice = getComputerChoice();
-            playRound(userChoice, computerChoice);
+    let wishToProceed;
+    while (wishToProceed != 'yes' && wishToProceed != 'no') {
+        wishToProceed = prompt("Do you want to start the game? (Type 'yes' or 'no'): ").toLowerCase();
+        if (wishToProceed == 'yes') {
+            console.clear();
+            for (let i = 0; i < 5; i++) {
+                userChoice = getUserChoice();
+                computerChoice = getComputerChoice();
+                playRound(userChoice, computerChoice);
+                console.log("--------------------");
+            }
+            console.log(userScore > computerScore ? "USER IS THE WINNER." : "COMPUTER IS THE WINNER.");
+        }
+        else if (wishToProceed == 'no') {
             console.log("--------------------");
+            console.log("See you next time...");
         }
     }
-    console.log(userScore > computerScore ? "USER IS THE WINNER." : "COMPUTER IS THE WINNER.")
 }
 
 playGame()
