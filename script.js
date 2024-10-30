@@ -34,6 +34,11 @@
 //    functions in a particular order and using variables 
 //    to keep track of the values for certain rounds(?)
 
+// Understand the problem:
+// We must find a way to rework the current code for
+// this rock paper scissors game from being console-only
+// to being playable through user input and visible elements
+// on the screen through DOM manipulation.
 
 function getComputerChoice() {
     let computerChoice = Math.floor(3*Math.random())
