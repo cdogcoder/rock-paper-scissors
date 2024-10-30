@@ -40,6 +40,36 @@
 // to being playable through user input and visible elements
 // on the screen through DOM manipulation.
 
+// My pseudocode
+// 1. Completely remove the 'playGame' function.
+//    Use buttons to direct the user to the start
+//    of the game and to change the elements on the
+//    screen to those that ask a user for their choice 
+//    in a round (text element asking user for their
+//    choice and choice buttons below).
+// 2. Rewrite the 'playRound' function to take input
+//    from the choice buttons and display the results
+//    of the round on the screen (score and winner).
+//    This function should run every time the user presses
+//    any of the choice buttons and each press establishes
+//    a new round in the game, which means that the new
+//    results of a round based on the press should be displayed
+//    on screen.
+// 3. Write a function 'getGameEndStatus' that checks if
+//    the total of the players' scores is one less than
+//    'numOfRounds'. If this is true, return true because
+//    after that round, the game is going to end. Otherwise,
+//    return false.
+// 4. Initialize a variable 'numOfRounds' to act as
+//    the counter for how many rounds should be played.
+//    Every time a choice button is pressed, the function
+//    that is called back will check if the total of the 
+//    two scores (the user and the computer's) is one less
+//    than 'numOfRounds' and if so, call the 'playRound' function
+//    one more time and display the final round result and 
+//    winner of the game on the screen. Otherwise, the function
+//    will just call 'playRound'.
+
 function getComputerChoice() {
     let computerChoice = Math.floor(3*Math.random())
     return (computerChoice == 0 ? "rock" 
