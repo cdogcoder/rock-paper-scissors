@@ -198,7 +198,7 @@ playGameButton.addEventListener('click', function() {
             if (getGameEndStatus()) {
                 playRound(userChoice, computerChoice);
                 document.body.removeChild(choiceButtonsContainer);
-                resultsText.textContent = userScore > computerScore ? "USER WINS!" : "COMPUTER WINS!";
+                resultsText.textContent = userScore > computerScore ? "USER WINS!" : computerScore > userScore ? "COMPUTER WINS!" : "YOU TIED!";
                 scoresText.textContent = `FINAL - User score: ${userScore}, Computer score: ${computerScore}`;
             }
             else {
