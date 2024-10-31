@@ -145,3 +145,23 @@ function playRound(userChoice, computerChoice) {
          
 }
 
+const introHeader = document.querySelector('h1');
+const proceedText = document.querySelector('h2');
+const playGameButton = document.querySelector('button');
+playGameButton.addEventListener('click', function() {
+    const gameRoundText = document.createElement('h1');
+    gameRoundText.textContent = "Pick one: Rock, Paper, or Scissors?";
+    const choiceButtonsContainer = document.createElement('div');
+    choiceButtonsContainer.style.cssText = "display: flex; gap: 8px;";
+    const choicesArray = ['rock', 'paper', 'scissors'];
+    document.body.appendChild(gameRoundText);
+    document.body.removeChild(introHeader);
+    document.body.removeChild(proceedText);
+    document.body.removeChild(playGameButton);
+    for (let i = 0; i < 3; i++) {
+        const choiceButton = document.createElement('button');
+        choiceButton.textContent = choicesArray[i];
+        choiceButtonsContainer.appendChild(choiceButton);
+    }
+    document.body.appendChild(choiceButtonsContainer);
+})
