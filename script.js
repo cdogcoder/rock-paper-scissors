@@ -92,57 +92,81 @@ function getUserChoice() {
 
 let userScore = 0;
 let computerScore = 0;
+const detailsContainer = document.createElement('div');
+const userDetailsContainer = document.createElement('div');
+let userChoiceText = document.createElement('h2');
+userChoiceText.textContent = "User Choice:";
+let usersChoice = document.createElement('h3');
+userDetailsContainer.appendChild(userChoiceText);
+userDetailsContainer.appendChild(usersChoice);
+const computerDetailsContainer = document.createElement('div');
+let computerChoiceText = document.createElement('h2');
+computerChoiceText.textContent = "Computer Choice:";
+let computersChoice = document.createElement('h3');
+computerDetailsContainer.appendChild(computerChoiceText);
+computerDetailsContainer.appendChild(computersChoice);
+detailsContainer.style.cssText = "display: flex; gap: 24px;";
+detailsContainer.appendChild(userDetailsContainer);
+detailsContainer.appendChild(computerDetailsContainer);
+const resultsContainer = document.createElement('div');
+let resultsText = document.createElement('h2');
+let scoresText = document.createElement('h3');
+resultsContainer.style.cssText = "width: 100%; border-top: 2px solid black; padding-top: 16px;"
+resultsContainer.appendChild(resultsText);
+resultsContainer.appendChild(scoresText); 
+const roundResultsContainer = document.createElement('div');
+roundResultsContainer.style.cssText = "margin-top: 36px; border: 2px solid black; padding: 16px; border-radius: 8px; display: flex; flex-direction: column; gap: 24px;"
+roundResultsContainer.appendChild(detailsContainer);
+roundResultsContainer.appendChild(resultsContainer);
 
 function playRound(userChoice, computerChoice) {
-    console.log("User choice: ", userChoice);
-    console.log("Computer choice: ", computerChoice)
+    document.body.appendChild(roundResultsContainer);
+    usersChoice.textContent = userChoice;
+    computersChoice.textContent = computerChoice;
     switch (userChoice) {
         case "rock":
             if (computerChoice == "rock") {
-                console.log("It was a tie.");
+                resultsText.textContent = "It was a tie.";
             }
             else if (computerChoice == "paper") {
-                console.log("Computer wins.");
+                resultsText.textContent = "Computer wins.";
                 computerScore++;
             }
             else {
-                console.log("User wins.");
+                resultsText.textContent = "User wins."
                 userScore++;
             }
             break;
 
         case "paper": 
             if (computerChoice == "rock") {
-                console.log("User wins.");
+                resultsText.textContent = "User wins."
                 userScore++;
             }
             else if (computerChoice == "paper") {
-                console.log("It was a tie.");
+                resultsText.textContent = "It was a tie.";
             }
             else {
-                console.log("Computer wins.");
+                resultsText.textContent = "Computer wins.";
                 computerScore++;
             }
             break;
         
         case "scissors": 
             if (computerChoice == "rock") {
-                console.log("Computer wins.");
+                resultsText.textContent = "Computer wins.";
                 computerScore++;
             }
             else if (computerChoice == "paper") {
-                console.log("User wins.");
+                resultsText.textContent = "User wins."
                 userScore++;
             }
             else {
-                console.log("It was a tie.");
+                resultsText.textContent = "It was a tie.";
             }
             break;
     }
-    console.log("");
-    console.log("User score: ", userScore);
-    console.log("Computer score: ", computerScore);
-         
+    scoresText.textContent = `User score: ${userScore}, Computer Score: ${computerScore}`;
 }
 
 const introHeader = document.querySelector('h1');
@@ -161,6 +185,11 @@ playGameButton.addEventListener('click', function() {
     for (let i = 0; i < 3; i++) {
         const choiceButton = document.createElement('button');
         choiceButton.textContent = choicesArray[i];
+        choiceButton.addEventListener('click', function() {
+            let userChoice = choiceButton.textContent;
+            let computerChoice = getComputerChoice();
+            playRound(userChoice, computerChoice);
+        })
         choiceButtonsContainer.appendChild(choiceButton);
     }
     document.body.appendChild(choiceButtonsContainer);
