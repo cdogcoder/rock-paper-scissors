@@ -176,6 +176,16 @@ function getGameEndStatus() {
     return numOfPlayedRounds == numOfRounds-1 ? true : false;
 }
 
+function restartGame() {
+    document.body.innerHTML = "";
+    document.body.appendChild(introHeader);
+    document.body.appendChild(proceedText);
+    document.body.appendChild(playGameButton);
+    userScore = 0;
+    computerScore = 0;
+    numOfPlayedRounds = 0;
+}
+
 const introHeader = document.querySelector('h1');
 const proceedText = document.querySelector('h2');
 const playGameButton = document.querySelector('button');
@@ -185,10 +195,10 @@ playGameButton.addEventListener('click', function() {
     const choiceButtonsContainer = document.createElement('div');
     choiceButtonsContainer.style.cssText = "display: flex; gap: 8px;";
     const choicesArray = ['rock', 'paper', 'scissors'];
-    document.body.appendChild(gameRoundText);
     document.body.removeChild(introHeader);
     document.body.removeChild(proceedText);
     document.body.removeChild(playGameButton);
+    document.body.appendChild(gameRoundText);
     for (let i = 0; i < 3; i++) {
         const choiceButton = document.createElement('button');
         choiceButton.textContent = choicesArray[i];
