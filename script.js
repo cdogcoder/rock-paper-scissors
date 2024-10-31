@@ -210,6 +210,11 @@ playGameButton.addEventListener('click', function() {
                 document.body.removeChild(choiceButtonsContainer);
                 resultsText.textContent = userScore > computerScore ? "USER WINS!" : computerScore > userScore ? "COMPUTER WINS!" : "YOU TIED!";
                 scoresText.textContent = `FINAL - User score: ${userScore}, Computer score: ${computerScore}`;
+                let restartButton = document.createElement('button');
+                restartButton.textContent = "Play again?";
+                restartButton.style.cssText = "margin-top: 24px;"
+                restartButton.addEventListener('click', restartGame);
+                document.body.appendChild(restartButton);
             }
             else {
                 playRound(userChoice, computerChoice);
