@@ -92,6 +92,7 @@ function getUserChoice() {
 
 let userScore = 0;
 let computerScore = 0;
+let numOfRounds = 5;
 const detailsContainer = document.createElement('div');
 const userDetailsContainer = document.createElement('div');
 let userChoiceText = document.createElement('h2');
@@ -167,6 +168,11 @@ function playRound(userChoice, computerChoice) {
             break;
     }
     scoresText.textContent = `User score: ${userScore}, Computer Score: ${computerScore}`;
+}
+
+function getGameEndStatus() {
+    let totalScores = userScore + computerScore;
+    return totalScores == numOfRounds-1 ? true : false;
 }
 
 const introHeader = document.querySelector('h1');
